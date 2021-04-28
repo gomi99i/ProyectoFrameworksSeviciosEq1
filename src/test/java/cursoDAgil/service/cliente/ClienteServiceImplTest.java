@@ -27,7 +27,7 @@ public class ClienteServiceImplTest {
 			List<Cliente> lista = clienteService.listarTodosClientes();
 			assertEquals(lista.size(),3);
 			System.out.println("Peureba");
-			System.out.println("Prueba hecho por Orlando");
+			System.out.println("Prueba hecho por Orlando y modificado por Ivan");
 		} catch(Exception e){
 			System.out.println("Error: " + e);
 		}
