@@ -26,6 +26,7 @@ public class ClienteServiceImplTest {
 		try{
 			List<Cliente> lista = clienteService.listarTodosClientes();
 			assertEquals(lista.size(),3);
+			System.out.println("Peureba");
 		} catch(Exception e){
 			System.out.println("Error: " + e);
 		}
