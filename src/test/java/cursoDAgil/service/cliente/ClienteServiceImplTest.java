@@ -25,7 +25,6 @@ public class ClienteServiceImplTest {
 	public void pruebaConsultarTodo(){
 		try{
 			List<Cliente> lista = clienteService.listarTodosClientes();
-			System.out.println("Esto es ejemplo de un commit & push");
 			assertEquals(lista.size(),3);
 		} catch(Exception e){
 			System.out.println("Error: " + e);
