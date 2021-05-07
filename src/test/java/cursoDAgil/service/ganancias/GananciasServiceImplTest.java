@@ -25,7 +25,7 @@ public class GananciasServiceImplTest {
 	
 	@Test
 	public void pruebaObtenerGanancias() {
-		System.out.println("----------------Test Obtener Todas las Ganancias-----------------------");
+		System.out.println("---------------- Test Obtener Todas las Ganancias -----------------------");
 		int reg;
 		try {
 			List<Ganancias> lista = gananciasService.obtenerGanancias();
@@ -39,7 +39,7 @@ public class GananciasServiceImplTest {
 	
 	@Ignore
 	public void pruebaObtenerGananciaPorFecha() {
-		System.out.println("----------------Test Obtener Ganancias por Fecha-----------------------");
+		System.out.println("---------------- Test Obtener Ganancias por Fecha -----------------------");
 		int reg;		
 		Map<String, String> mapGanancias = new HashMap<>();
 		mapGanancias.put("fecha","2021-04-15");		
@@ -55,7 +55,7 @@ public class GananciasServiceImplTest {
 
 	@Ignore
 	public void pruebaNuevaGanancia() {
-		System.out.println("----------------Test Nueva Ganancia----------------");
+		System.out.println("---------------- Test Nueva Ganancia ----------------");
 		Ganancias ganancias = new Ganancias();
 		try {
 			ganancias.setTotalGanancia(234.8);

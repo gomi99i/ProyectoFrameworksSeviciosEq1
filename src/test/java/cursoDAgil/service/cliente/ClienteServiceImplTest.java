@@ -27,7 +27,7 @@ public class ClienteServiceImplTest {
 
 	@Test
 	public void pruebaListarTodosClientes() {
-		System.out.println("---------------- Test Listar Todos los Clientes -----------------------");
+		System.out.println("\n---------------- Test Listar Todos los Clientes -----------------------");
 		int reg;
 		try {
 			List<Cliente> lista = clienteService.listarTodosClientes();
@@ -41,11 +41,11 @@ public class ClienteServiceImplTest {
 
 	@Ignore
 	public void pruebaObtenerClientePorId() {
-		System.out.println("---------------- Test Obtener Cliente por Id -----------------------");
+		System.out.println("\n---------------- Test Obtener Cliente por Id -----------------------");
 		Cliente cliente = new Cliente();
 		Map<String, Integer> mapCliente = new HashMap<>();
-		mapCliente.put("id", 1);
 		try {
+			mapCliente.put("id", 1);
 			cliente = clienteService.obtenerClientePorId(mapCliente);
 			assertNotNull(cliente);
 			System.out.println("Id:  " + cliente.getId());
@@ -58,8 +58,8 @@ public class ClienteServiceImplTest {
 
 	@Ignore
 	public void pruebaNuevoCliente() {
+		System.out.println("\n---------------- Test Nuevo Cliente -----------------------");
 		Cliente cliente = new Cliente();
-		System.out.println("---------------- Test Nuevo Cliente -----------------------");
 		try {
 			cliente.setNombre("Cliente1");
 			cliente.setApellido("De prueba");
@@ -75,17 +75,19 @@ public class ClienteServiceImplTest {
 
 	@Ignore
 	public void pruebaCambiarClientePorId() {
-		System.out.println("---------------- Test Cambiar Cliente -----------------------");
+		System.out.println("\n---------------- Test Actualizar Cliente -----------------------");
 		Cliente cliente = new Cliente();
 		Map<String, Integer> mapCliente = new HashMap<>();
-		Integer CambiarIdCliente = 8;
+		Integer cambiarIdCliente;
 		try {
-			mapCliente.put("id", CambiarIdCliente);
+			cambiarIdCliente = 8;
+			mapCliente.put("id", cambiarIdCliente);
 			cliente = clienteService.obtenerClientePorId(mapCliente);
 			assertNotNull(cliente);
+			
 			cliente.setNombre("Nombre Cambiado");
 			cliente.setApellido("Apellido Cambiado");
-			clienteService.cambiarClientePorId(cliente, CambiarIdCliente);
+			clienteService.cambiarClientePorId(cliente, cambiarIdCliente);
 			System.out.println("Cliente actualizado correctamente");
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
@@ -94,10 +96,15 @@ public class ClienteServiceImplTest {
 
 	@Ignore
 	public void pruebaEliminarClientePorId() {
-		System.out.println("---------------- Test Eliminar Cliente -----------------------");
+		System.out.println("\n---------------- Test Eliminar Cliente -----------------------");
+		Cliente cliente = new Cliente();
 		Map<String, Integer> mapCliente = new HashMap<>();
-		mapCliente.put("id", 8);
+		Integer eliminarIdCliente;
 		try {
+			eliminarIdCliente = 9;
+			mapCliente.put("id", eliminarIdCliente);
+			cliente = clienteService.obtenerClientePorId(mapCliente);
+			assertNotNull(cliente);
 			clienteService.eliminarClientePorId(mapCliente);
 			System.out.println("Cliente eliminado correctamente");
 		} catch (Exception e) {

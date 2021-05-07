@@ -7,8 +7,8 @@ import cursoDAgil.bd.domain.Marcas;
 
 public interface MarcasService {
 	List <Marcas> listarTodasMarcas();
-	Integer nuevaMarca(Marcas marca);
 	Marcas obtenerMarcaPorId(Map<String, Integer> mapMarca);
-	Integer eliminarMarca(Map<String, Integer> mapMarca);
+	Integer nuevaMarca(Marcas marca);
 	Integer actualizarMarca(Marcas marca);
+	Integer eliminarMarca(Map<String, Integer> mapMarca);
 }

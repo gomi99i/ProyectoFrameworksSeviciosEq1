@@ -28,26 +28,25 @@ public class MarcasServiceImplTest {
 	MarcasService marcasService;
 	
 	@Test
-	public void desplegarTodasMarcar(){
-		System.out.println("Prueba unitaria de listarTodasMarcas");
+	public void pruebaListarTodasMarcas(){
+		System.out.println("\n---------------- Test Listar Todas las Marcas -----------------------");
+		int reg;
 		try{
-			int numRegistros;
 			List<Marcas> marcas = marcasService.listarTodasMarcas();
-			numRegistros = marcas.size();
-			System.out.println("Total de registros en Marcas: " + numRegistros);
 			for(Marcas aux : marcas){
 				System.out.println("id: " + aux.getIdMarca() + "  nombre: " + aux.getNombreMarca());
 			}
+			reg = marcas.size();
+			assertEquals(marcas.size(), reg);
+			System.out.println("\nRegistros en la tabla: " + reg);
 		} catch(Exception ex){
 			System.out.println("Error: " + ex);
 		}
-		System.out.println("Fin prueba unitaria listarTodasMarcas");
-		System.out.println();
 	}
 	
 	@Ignore
-	public void desplegarMarcaPorId(){
-		System.out.println("Prueba unitaria de obtenerMarcaPorId");
+	public void pruebaObtenerMarcaPorId(){
+		System.out.println("\n---------------- Test Obtener Marca por Id -----------------------");
 		Map <String,Integer> mapMarca = new HashMap<>();
 		mapMarca.put("idMarca", 1);
 		try{
@@ -57,52 +56,45 @@ public class MarcasServiceImplTest {
 		} catch(Exception ex){
 			System.out.println("Error: " + ex);
 		}
-		System.out.println("Fin prueba unitaria obtenerMarcaPorId");
-		System.out.println();
 	}
 	
 	@Ignore
-	public void ingresarNuevaMarca(){
-		System.out.println("Prueba unitaria de nuevaMarca");
+	public void pruebaNuevaMarca(){
+		System.out.println("\n---------------- Test Nueva Marca -----------------------");
 		Marcas marca = new Marcas();
 		try{
 			marca.setNombreMarca("La costeña");
 			marcasService.nuevaMarca(marca);
+			System.out.println("Marca creada correctamente");
 		} catch(Exception ex) {
 			System.out.println("Error: " + ex);
 		}
-		System.out.println("Fin prueba unitaria nuevaMarca");
-		System.out.println();
-	}
-	
-	@Ignore
-	public void pruebaEliminarMarca(){
-		System.out.println("Prueba unitaria de eliminarMarca");
-		Map<String,Integer> mapMarca = new HashMap<>();
-		mapMarca.put("idMarca", 4);
-		try{
-			marcasService.eliminarMarca(mapMarca);
-		} catch(Exception ex){
-			System.out.println("Error: " + ex);
-		}
-		System.out.println("Fin prueba unitaria eliminarMarca");
-		System.out.println();
 	}
 	
 	@Ignore
 	public void pruebaActualizarMarca(){
-		System.out.println("Prueba unitaria de actualizarMarca");
+		System.out.println("\n---------------- Test Actualizar Marca -----------------------");
 		Marcas marca = new Marcas();
 		try{
-			marca.setIdMarca(3);
+			marca.setIdMarca(7);
 			marca.setNombreMarca("Totis");
 			marcasService.actualizarMarca(marca);
+			System.out.println("Marca actualizada correctamente");
 		} catch(Exception ex){
 			System.out.println("Error: " + ex);
 		}
-		System.out.println("Fin prueba unitaria actualizarMarca");
-		System.out.println();
 	}
 	
-	
+	@Ignore
+	public void pruebaEliminarMarca(){
+		System.out.println("\n---------------- Test Eliminar Marca -----------------------");
+		Map<String,Integer> mapMarca = new HashMap<>();
+		mapMarca.put("idMarca", 7);
+		try{
+			marcasService.eliminarMarca(mapMarca);
+			System.out.println("Marca eliminada correctamente");
+		} catch(Exception ex){
+			System.out.println("Error: " + ex);
+		}
+	}	
 }

@@ -13,8 +13,8 @@ import cursoDAgil.dao.productos.ProductosDao;
 @Named
 public class ProductosServiceImpl implements ProductosService, Serializable {
 
-	
 	private static final long serialVersionUID = -6591933548138985119L;
+	
 	@Inject
 	ProductosDao productosDao;
 	
@@ -24,26 +24,22 @@ public class ProductosServiceImpl implements ProductosService, Serializable {
 	}
 
 	@Override
+	public Productos obtenerProductoPorId(Map<String, Integer> mapProducto) {
+		return productosDao.obtenerProductoPorId(mapProducto);
+	}
+
+	@Override
 	public Integer nuevoProductoMarca(Productos producto) {
-		// TODO Auto-generated method stub
 		return productosDao.nuevoProductoMarca(producto);
 	}
 
 	@Override
-	public Integer eliminarProductoPorId(Map<String, Integer> mapProducto) {
-		// TODO Auto-generated method stub
-		return productosDao.eliminarProductoPorId(mapProducto);
-	}
-
-	@Override
 	public Integer cambiarProductoPorId(Productos producto, Integer id) {
-		// TODO Auto-generated method stub
 		return productosDao.cambiarProductoPorId(producto, id);
 	}
 
 	@Override
-	public Productos obtenerProductoPorId(Map<String, Integer> mapProducto) {
-		// TODO Auto-generated method stub
-		return productosDao.obtenerProductoPorId(mapProducto);
+	public Integer eliminarProductoPorId(Map<String, Integer> mapProducto) {
+		return productosDao.eliminarProductoPorId(mapProducto);
 	}
 }
