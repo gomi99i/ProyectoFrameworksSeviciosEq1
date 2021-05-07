@@ -15,27 +15,22 @@ public class VentasServiceImpl implements VentasService{
 	@Inject 
 	VentasDao ventasDao;
 	
-	
 	public List<Ventas> consultarTodasVentas() {
 		return ventasDao.consultarTodasVentas();
 	}
-
 
 	@Override
 	public List<Ventas> consultarVentaPorCliente(Map<String, Integer> mapVentas) {
 		return ventasDao.consultarVentaPorCliente(mapVentas);
 	}
 
-
 	@Override
 	public Integer nuevaVenta(Ventas venta) {
 		return ventasDao.nuevaVenta(venta);
 	}
 
-
 	@Override
 	public Integer actualizaVenta(Ventas venta) {
 		return ventasDao.actualizaVenta(venta);
 	} 
-
 }

@@ -48,7 +48,7 @@ public class DireccionServiceImplTest {
 		}
 	}
 	
-	@Test
+	@Ignore
 	public void nuevoRegistro() {
 		Direccion direccion = new Direccion();
 		System.out.println("Test nuevo registro");
@@ -66,7 +66,7 @@ public class DireccionServiceImplTest {
 		}
 	}
 	
-	@Test
+	@Ignore
 	public void consultarDireccionPorId() {
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>(); 
@@ -86,7 +86,8 @@ public class DireccionServiceImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Test
+	
+	@Ignore
 	public void eliminarDireccion(){
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
@@ -100,7 +101,7 @@ public class DireccionServiceImplTest {
 		}
 	}
 	
-	@Test
+	@Ignore
 	public void cambiarDireccion(){
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
