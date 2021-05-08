@@ -26,7 +26,7 @@ public class DireccionServiceImplTest {
 	@Test
 	public void pruebaConsultarTodo() {
 		int reg;
-		System.out.println("Test consultar todas las direcciones");
+		System.out.println("\n---------------- Test Listar Todas las Direcciones -----------------------");
 		try {
 			List<Direccion> lista = direccionService.obtenerDirecciones();
 			reg = lista.size();
@@ -49,9 +49,9 @@ public class DireccionServiceImplTest {
 	}
 	
 	@Ignore
-	public void nuevoRegistro() {
+	public void pruebaNuevoRegistro() {
 		Direccion direccion = new Direccion();
-		System.out.println("Test nuevo registro");
+		System.out.println("\n---------------- Test Nueva Direccion -----------------------");
 		try {
 			direccion.setCalle("Trujano");
 			direccion.setNumero(49);
@@ -61,14 +61,16 @@ public class DireccionServiceImplTest {
 			direccion.setPais("Mexico");
 			direccion.setCodigoPostal(69000);
 			direccionService.nuevaDireccionCliente(direccion);
+			System.out.println("Direccion creada correctamente");
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
 	}
 	
 	@Ignore
-	public void consultarDireccionPorId() {
+	public void pruebaConsultarDireccionPorId() {
 		Direccion direccion = new Direccion();
+		System.out.println("\n---------------- Test Obtener Direccion por Id -----------------------");
 		Map<String, Integer> mapDireccion = new HashMap<>(); 
 		mapDireccion.put("idDireccion", 3);
 		try {
@@ -88,7 +90,8 @@ public class DireccionServiceImplTest {
 	}
 	
 	@Ignore
-	public void eliminarDireccion(){
+	public void pruebaEliminarDireccion(){
+		System.out.println("\n---------------- Test Eliminar Direccion -----------------------");
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
 		mapDireccion.put("idDireccion", 5);
@@ -96,13 +99,15 @@ public class DireccionServiceImplTest {
 			direccion = direccionService.obtenerDireccionPorId(mapDireccion);
 			assertNotNull(direccion); 
 			direccionService.eliminarDireccion(mapDireccion);
+			System.out.println("Direccion eliminada correctamente");
 		}catch (Exception e){
 			System.out.println("Error:" + e);
 		}
 	}
 	
 	@Ignore
-	public void cambiarDireccion(){
+	public void pruebaCambiarDireccion(){
+		System.out.println("\n---------------- Test Actualizar Direccion -----------------------");
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
 		Integer CambiarId = 1; 
@@ -113,6 +118,7 @@ public class DireccionServiceImplTest {
 			direccion.setCalle("Avenida siempre viva");
 			direccion.setCiudad("Guajolotitlan");
 			direccionService.cambiarDireccion(direccion, CambiarId);
+			System.out.println("Direccion actualizada correctamente");
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
