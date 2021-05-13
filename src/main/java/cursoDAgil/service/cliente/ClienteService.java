@@ -10,5 +10,5 @@ public interface ClienteService {
 	Cliente obtenerClientePorId(Map<String, Integer> mapCliente);
 	Integer nuevoCliente(Cliente cliente);
 	Integer cambiarClientePorId(Cliente cliente, Integer id); 
-	Integer eliminarClientePorId(Map<String, Integer> mapCliente); 
+	Integer eliminarClientePorId(Map<String, Integer> mapCliente);    
 }
